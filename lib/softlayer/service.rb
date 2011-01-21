@@ -81,6 +81,29 @@ module SoftLayer
       merged_object.parameters = @parameters.merge({ :object_mask => args }) if args && !args.empty?
       merged_object
     end
+    
+    def result_limit
+      self.parameters[:result_limit]
+    end
+    
+    def result_limit=(limit)
+      merged_object = APIParameterFilter.new;
+      merged_object.target = self.target
+      merged_object.parameters = @parameters.merge({ :result_limit => limit }) if args && !args.empty?
+      merged_object
+    end
+    
+    def result_offset
+      self.parameters[:result_offset]
+    end
+    
+    
+    def result_offset=(offset)
+      merged_object = APIParameterFilter.new;
+      merged_object.target = self.target
+      merged_object.parameters = @parameters.merge({ :result_offset => offset }) if args && !args.empty?
+      merged_object
+    end
 
     def method_missing(method_name, *args, &block)
       return @target.call_softlayer_api_with_params(method_name, self, args, &block)
