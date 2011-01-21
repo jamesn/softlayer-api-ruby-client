@@ -95,10 +95,8 @@ module SoftLayer
     
     
     def result_offset(offset)
-      merged_object = APIParameterFilter.new;
-      merged_object.target = self.target
-      merged_object.parameters = @parameters.merge({ :result_offset => offset })
-      merged_object
+      self.parameters[:result_offset] = offset
+      self
     end
     
     def server_result_offset
