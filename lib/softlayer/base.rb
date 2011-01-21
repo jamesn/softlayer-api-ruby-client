@@ -36,7 +36,7 @@
 #
 
 module SoftLayer
-  VERSION = "1.0.2"  # version history at the bottom of the file.
+  VERSION = "1.0.2.1"  # version history at the bottom of the file.
 
   # The base URL of the SoftLayer API's REST-like endpoints available to the public internet.
   API_PUBLIC_ENDPOINT = 'https://api.softlayer.com/rest/v3/'
